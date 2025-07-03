@@ -15,7 +15,8 @@ In an effort to optimize marketing efficiency and enhance customer experience, t
 
 As a data scientist tasked with this project, your responsibility is to analyze the given customer data, apply machine learning techniques to segment the customer base, and provide actionable insights into the characteristics of each segment.  
 
-## DatasetThe dataset includes historical data on customer demographics, personality traits, and purchasing behaviors. Key attributes are:  
+## Dataset
+The dataset includes historical data on customer demographics, personality traits, and purchasing behaviors. Key attributes are:  
 
 1. **Customer Information**  
    - **ID:** Unique identifier for each customer.  
