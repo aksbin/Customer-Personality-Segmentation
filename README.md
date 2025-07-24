@@ -13,46 +13,77 @@ In an effort to optimize marketing efficiency and enhance customer experience, t
 2. Create effective retention strategies for high-value customers.  
 3. Optimize resource allocation, such as inventory management, pricing strategies, and store layouts.  
 
-As a data scientist tasked with this project, your responsibility is to analyze the given customer data, apply machine learning techniques to segment the customer base, and provide actionable insights into the characteristics of each segment.  
 
-## Dataset
-The dataset includes historical data on customer demographics, personality traits, and purchasing behaviors. Key attributes are:  
+## Cluster Plot and Key Findings
 
-1. **Customer Information**  
-   - **ID:** Unique identifier for each customer.  
-   - **Year_Birth:** Customer's year of birth.  
-   - **Education:** Education level of the customer.  
-   - **Marital_Status:** Marital status of the customer.  
-   - **Income:** Yearly household income (in dollars).  
-   - **Kidhome:** Number of children in the household.  
-   - **Teenhome:** Number of teenagers in the household.  
-   - **Dt_Customer:** Date when the customer enrolled with the company.  
-   - **Recency:** Number of days since the customer’s last purchase.  
-   - **Complain:** Whether the customer complained in the last 2 years (1 for yes, 0 for no).  
+After preprocessing and dimensionality reduction (PCA), we applied the KMeans algorithm and identified 2 optimal customer clusters using the elbow method.
 
-2. **Spending Information (Last 2 Years)**  
-   - **MntWines:** Amount spent on wine.  
-   - **MntFruits:** Amount spent on fruits.  
-   - **MntMeatProducts:** Amount spent on meat.  
-   - **MntFishProducts:** Amount spent on fish.  
-   - **MntSweetProducts:** Amount spent on sweets.  
-   - **MntGoldProds:** Amount spent on gold products.  
+<img width="607" height="475" alt="image" src="https://github.com/user-attachments/assets/889fe30a-70f9-4396-9b90-9333315dc6ac" />
 
-3. **Purchase and Campaign Interaction**  
-   - **NumDealsPurchases:** Number of purchases made using a discount.  
-   - **AcceptedCmp1:** Response to the 1st campaign (1 for yes, 0 for no).  
-   - **AcceptedCmp2:** Response to the 2nd campaign (1 for yes, 0 for no).  
-   - **AcceptedCmp3:** Response to the 3rd campaign (1 for yes, 0 for no).  
-   - **AcceptedCmp4:** Response to the 4th campaign (1 for yes, 0 for no).  
-   - **AcceptedCmp5:** Response to the 5th campaign (1 for yes, 0 for no).  
-   - **Response:** Response to the last campaign (1 for yes, 0 for no).  
 
-4. **Shopping Behavior**  
-   - **NumWebPurchases:** Number of purchases made through the company’s website.  
-   - **NumCatalogPurchases:** Number of purchases made using catalogs.  
-   - **NumStorePurchases:** Number of purchases made directly in stores.  
-   - **NumWebVisitsMonth:** Number of visits to the company’s website in the last month.  
-NumWebPurchases: Number of purchases made through the company’s website.
-NumCatalogPurchases: Number of purchases made using catalogs.
-NumStorePurchases: Number of purchases made directly in stores.
-NumWebVisitsMonth: Number of visits to the company’s website in the last month.
+## Cluster Profiling by Standardized Features
+
+This bar chart shows the standardized average values of key features across the two clusters. The contrast in spending, demographics, and channel engagement makes the segmentation actionable from a business perspective.
+
+<img width="1434" height="702" alt="image" src="https://github.com/user-attachments/assets/f18e00d0-118e-41da-908e-9f077e1104bb" />
+
+
+##### **Observations:**
+
+Cluster 0:
+- Higher Income, fewer children
+- Strong spend on premium categories
+- Highly active across all channels - (store, web, catalog)
+- Above average catalog and web purchases
+
+*These are the premium high engagment customers*
+______________
+Cluster 1:
+- Lower income, more children
+- Below average spending across all product categories
+- Less active overall, despite slightly higher web visits
+- Minimal catalog and store interaction
+
+
+*These are the budget-conscious lower-engagement customers and have more kids*
+
+## **Business Recommendations**
+
+---
+
+### Cluster 0: Premium High Engagement Customers
+
+**Profile:**  
+High income individuals with fewer children, exhibiting high engagement across all purchasing channels and above average spending, especially on premium products like meat, wine, and gold.
+
+**Strategic Recommendations:**
+
+- **Loyalty Program:** Introduce a tiered loyalty program that rewards continued engagement with perks such as early access to new products, premium bundle discounts, or exclusive offers.
+- **Exclusive Catalog Drops:** Leverage their strong response to catalogs by launching limited edition campaigns or seasonal collections through this channel.
+- **Premium Bundling:** Offer high-margin curated bundles (e.g., gourmet meat and wine pairings) tailored to their purchasing behavior.
+- **Personalized Touchpoints:** Implement "surprise and delight" strategies like personalized thank-you notes, birthday discounts, or tailored product suggestions.
+- **Retention Monitoring:** Track engagement levels and proactively re-engage users showing signs of reduced activity (e.g., fewer catalog orders or web visits).
+
+>  *These are your high-value customers. Your primary goal should be retention and upsell through premium, personalized experiences.*
+
+---
+
+### Cluster 1: Budget-Conscious, Low Engagement Customers
+
+**Profile:**  
+Lower-income households with more children, primarily interacting through the website. They show lower overall spend and limited engagement with store or catalog channels.
+
+**Strategic Recommendations:**
+
+- **Value Bundles:** Introduce family-friendly bundles and budget-conscious product packs that appeal to households with tighter budgets.
+- **Digital First Engagement:** Focus marketing efforts on digital channels (email, mobile push) instead of catalogs. This aligns with their behavior and keeps costs low.
+- **Website Optimization:** Simplify the user experience, especially on mobile. Highlight value deals and bundles directly on the homepage or cart page.
+- **Discounts:** Offer simple, well-timed discounts to encourage purchases, especially during cart abandonment or on high-traffic pages.
+- **Referral Program:** Launch a “refer-a-friend” program with incentives, this segment is likely to respond well to small, high-perceived-value rewards.
+
+> *Focus on increasing engagement through affordability, convenience, and family-oriented messaging. Efficiency and scalability matter here.*
+
+---
+
+
+
